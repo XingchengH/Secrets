@@ -69,6 +69,17 @@ app.get("/secrets", function(req, res) {
   }
 });
 
+app.get("/logout", function(req, res) {
+  req.logout(function(err) {
+    if(err) {
+      console.log(err);
+    } else {
+      res.redirect("/");
+
+    }
+  });
+});
+
 app.post("/register", function(req, res) {
 
     // // password: md5(req.body.password)
